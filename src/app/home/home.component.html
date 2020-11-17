@@ -1,0 +1,22 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>S.No.</th>
+            <th>Product Code</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Buy</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product1 of products;let rowIndex=index">
+            <td>{{rowIndex+1}}</td>
+            <td>{{product1.code}}</td>
+            <td>{{product1.name}}</td>
+            <td>{{product1.price}}</td>
+            <td>
+                <a class="btn btn-secondary" [routerLink]="['/cart', { id:product1.id }]">Buy Now</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
