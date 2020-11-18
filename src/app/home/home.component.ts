@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from '../auth/auth.service';
 import { Product } from '../models/product';
 import { ProductService } from '../services/product.service';
 
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   notify: string;
   products: Product[];
-  constructor(private router: Router, private route: ActivatedRoute,private productService: ProductService) { }
+  constructor(private router: Router, private route: ActivatedRoute,private productService: ProductService,public auth: AuthService) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {

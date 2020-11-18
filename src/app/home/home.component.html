@@ -3,20 +3,31 @@
         <tr>
             <th>S.No.</th>
             <th>Product Code</th>
+            <th>Image</th>
             <th>Product Name</th>
+            <th>Description</th>
             <th>Product Price</th>
+            <ng-container *ngIf="auth.isAuthenticated()">
             <th>Buy</th>
+            </ng-container>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let product1 of products;let rowIndex=index">
             <td>{{rowIndex+1}}</td>
             <td>{{product1.code}}</td>
-            <td>{{product1.name}}</td>
-            <td>{{product1.price}}</td>
             <td>
-                <a class="btn btn-secondary" [routerLink]="['/cart', { id:product1.id }]">Buy Now</a>
+                <img src="{{product1.image}}" width="180" height="230">
             </td>
+            <td>{{product1.name}}</td>
+            <td>{{product1.details}}</td>
+            <td>${{product1.price}}</td>
+            <ng-container *ngIf="auth.isAuthenticated()">
+
+            <td>
+                <a class="btn btn-info" [routerLink]="['/cart', { id:product1.id }]">Buy Now</a>
+            </td>
+            </ng-container>
         </tr>
     </tbody>
 </table>

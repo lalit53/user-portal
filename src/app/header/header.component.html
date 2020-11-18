@@ -1,6 +1,6 @@
-<nav class="navbar navbar-light navbar-expand-lg" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-dark navbar-expand-lg" style="background-color: #00adb5;">
   <div class="container">
-    <a routerLink="/" class="navbar-brand" routerLinkActive="active">Amazon.com</a>
+    <a routerLink="/" class="navbar-brand" routerLinkActive="active">Lalit's Market</a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <ng-container *ngIf="!auth.isAuthenticated()">
@@ -16,7 +16,6 @@
           </li>
         </ng-container>
         <ng-container *ngIf="auth.isAuthenticated()">
-          <!-- //Enter products code here  -->
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/cart']">Cart</a>
           </li>

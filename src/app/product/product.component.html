@@ -4,6 +4,7 @@
             <th>S.No.</th>
             <th>Product Code</th>
             <th>Product Name</th>
+            <th>Description</th>
             <th>Product Price</th>
             <th>Actions</th>
         </tr>
@@ -13,6 +14,7 @@
             <td>{{rowIndex+1}}</td>
             <td>{{product.code}}</td>
             <td>{{product.name}}</td>
+            <td>{{product1.details}}</td>
             <td>{{product.price}}</td>
             <td>
                 <a class="btn btn-secondary" [routerLink]="['/cart', { id:product.id }]">Buy Now</a>
